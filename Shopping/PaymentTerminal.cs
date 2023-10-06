@@ -9,7 +9,7 @@
         #region public methods
         public PaymentTerminal(Checkout checkout)
         {
-            throw new NotImplementedException();
+            _checkout = checkout;
         }
 
         public object? CreditCard { get; set; }

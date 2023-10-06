@@ -10,19 +10,35 @@
         #region public methods
         public void Add(List<Article> articles)
         {
-            throw new NotImplementedException();
+            foreach (var article in articles)
+            {
+                _articles.Add(article);
+                _balance += article.Price;
+            }
         }
 
         public List<Article> Remove(Boolean empty = false)
         {
-            throw new NotImplementedException();
+            List<Article> articlesReadyToCheckout = new List<Article>();
+            if (empty)
+            {
+                articlesReadyToCheckout.AddRange(_articles);
+                _articles.Clear();
+            }
+            else
+            {
+                articlesReadyToCheckout.Add(_articles[_articles.Count - 1]);
+                _articles.RemoveAt(_articles.Count - 1);
+            }
+            UpdateBalance();
+            return articlesReadyToCheckout;
         }
 
         public List<Article> Articles
         {
             get
             {
-                throw new NotImplementedException();
+                return _articles;
             }
         }
 
@@ -30,7 +46,7 @@
         {
             get
             {
-                throw new NotImplementedException();
+                return _balance;
             }
         }
 
@@ -44,7 +60,7 @@
         private void UpdateBalance()
         {
             {
-                throw new NotImplementedException();
+                _balance = _articles.Count * _balance;
             }
         }
         #endregion private methods

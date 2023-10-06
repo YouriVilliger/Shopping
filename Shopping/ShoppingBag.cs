@@ -9,7 +9,10 @@
 
         public void Add(List<Article> articles)
         {
-            throw new NotImplementedException();
+            foreach (var article in articles)
+            {
+                this.articles.Add(article);
+            }
         }
 
         public List<Article> Remove(bool empty = false)
