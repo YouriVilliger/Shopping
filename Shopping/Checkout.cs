@@ -59,8 +59,10 @@
         #region private methods
         private void UpdateBalance()
         {
+            _balance = 0f;
+            foreach (var article in _articles)
             {
-                _balance = _articles.Count * _balance;
+              _balance += article.Price;
             }
         }
         #endregion private methods
