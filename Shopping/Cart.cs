@@ -22,7 +22,6 @@ namespace Shopping
             List<Article> articlesReadyToCheckout = new List<Article>();
             if (clearCart) 
             {
-
                 articlesReadyToCheckout.AddRange(_articles);
                 _articles.Clear();
             }
