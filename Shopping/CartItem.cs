@@ -32,7 +32,14 @@ namespace Shopping
             }
             set
             {
-                _quantity = value;
+                if (value < 0)
+                {
+                  throw new WrongQuantityException();
+                }
+                else
+                {
+                    _quantity = value;
+                }
             }
         }
         #endregion public methods
