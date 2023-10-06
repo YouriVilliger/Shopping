@@ -11,7 +11,10 @@ namespace Shopping
         #region public methods
         public void Add(List<Article> articles)
         {
-            throw new NotImplementedException();
+            foreach (var article in articles)
+            {
+                _articles.Add(article);
+            }
         }
 
         public List<Article> Remove(Boolean clearCart = false)
@@ -19,12 +22,16 @@ namespace Shopping
             List<Article> articlesReadyToCheckout = new List<Article>();
             if (clearCart) 
             {
-                throw new NotImplementedException();
+
+                articlesReadyToCheckout.AddRange(_articles);
+                _articles.Clear();
             }
             else
             {
-                throw new NotImplementedException();
+                articlesReadyToCheckout.Add(_articles[_articles.Count - 1]);
+                _articles.RemoveAt(_articles.Count - 1);
             }
+            return articlesReadyToCheckout;
         }
 
         public void Release()
@@ -36,7 +43,7 @@ namespace Shopping
         {
             get
             {
-                throw new NotImplementedException();
+                return _articles;
             }
         }
 
