@@ -50,7 +50,6 @@ namespace Shopping
 
         public float Price
         {
-
             get
             {
                 return CartPrice();
@@ -63,12 +62,10 @@ namespace Shopping
         private float CartPrice()
         {
             float _result = 0.00f;
-
             foreach (CartItem item in _articleItems)
             {
                 _result += item.Article.Price * item.Quantity;
             }
-
             return _result;
         }
         #endregion private methods
