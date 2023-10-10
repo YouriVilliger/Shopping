@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 
@@ -13,9 +14,9 @@ namespace Shopping
         #region public methods
         public void Add(List<CartItem> articleItems)
         {
-            foreach (var articleToAdd in articleItems)
+            foreach (CartItem articleToAdd in articleItems)
             {
-                _articleItems.Add(articleToAdd);
+                 _articleItems.Add(articleToAdd);
             }
         }
 
@@ -57,16 +58,19 @@ namespace Shopping
         }
         #endregion public methods
 
+        #region private methods
+
         private float CartPrice()
         {
             float _result = 0.00f;
 
-            foreach (var item in _articleItems)
+            foreach (CartItem item in _articleItems)
             {
-                _result += item.Article.Price;
+                _result += item.Article.Price * item.Quantity;
             }
 
             return _result;
         }
+        #endregion private methods
     }
 }
