@@ -19,7 +19,7 @@
             throw new NotImplementedException();
         }
 
-        public void InsertCard(CreditCard creditCard)
+        public void InsertCard()
         {
             throw new NotImplementedException();
         }
