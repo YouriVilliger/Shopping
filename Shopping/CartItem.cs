@@ -34,7 +34,7 @@ namespace Shopping
             {
                 if (value < 0)
                 {
-                  throw new WrongQuantityException();
+                  throw new  WrongQuantityException();
                 }
                 else
                 {

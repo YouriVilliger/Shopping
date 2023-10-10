@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 
 namespace Shopping
 {
@@ -6,6 +7,7 @@ namespace Shopping
     {
         #region private attributes
         private List<CartItem> _articleItems = new List<CartItem>();
+        private float _price;
         #endregion private attributes
 
         #region public methods
@@ -44,7 +46,7 @@ namespace Shopping
         {
             get
             {
-                throw new NotImplementedException();
+                return _price;
             }
         }
 
