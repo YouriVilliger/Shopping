@@ -52,22 +52,14 @@ namespace Shopping
         {
             get
             {
-                return CartPrice();
+                float _result = 0.00f;
+                foreach (CartItem item in _articleItems)
+                {
+                    _result += item.Article.Price * item.Quantity;
+                }
+                return _result;
             }
         }
         #endregion public methods
-
-        #region private methods
-
-        private float CartPrice()
-        {
-            float _result = 0.00f;
-            foreach (CartItem item in _articleItems)
-            {
-                _result += item.Article.Price * item.Quantity;
-            }
-            return _result;
-        }
-        #endregion private methods
     }
 }
