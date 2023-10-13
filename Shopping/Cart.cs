@@ -56,6 +56,11 @@
             }
         }
 
+        public bool DoesExist(int temp)
+        {
+            throw new NotImplementedException();
+        }
+
         public int Cheapest()
         {
             throw new NotImplementedException();
