@@ -150,6 +150,40 @@ namespace TestShopping
             Assert.IsTrue(_cart.DoesExist(999));
         }
 
+        public void Cheapest_UniqueValue_GetArticleId()
+        {
+            //given
+            List<Article> articles = ArticleGenerator.Generate(10);
+            List<CartItem> cartItems = new List<CartItem>();
+            foreach (Article article in articles)
+            {
+                cartItems.Add(new CartItem(article, 1));
+            }
+            _cart.Add(cartItems);
 
+            //when
+
+
+            //then
+            Assert.AreEqual(1, _cart.Cheapest());
+        }
+
+        public void MostExpensive_UniqueValue_GetArticleId()
+        {
+            //given
+            List<Article> articles = ArticleGenerator.Generate(10);
+            List<CartItem> cartItems = new List<CartItem>();
+            foreach (Article article in articles)
+            {
+                cartItems.Add(new CartItem(article, 1));
+            }
+            _cart.Add(cartItems);
+
+            //when
+
+
+            //then
+            Assert.AreEqual(10, _cart.Cheapest());
+        }
     }
 }

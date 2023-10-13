@@ -36,7 +36,7 @@ namespace Shopping
             }
         }
 
-        public bool DoesExist(int articleId)
+        public int Cheapest()
         {
             throw new NotImplementedException();
         }
