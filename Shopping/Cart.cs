@@ -83,8 +83,7 @@ namespace Shopping
                     _minPrice = cartIem.Article.Price;
                     _index = cartIem.Article.Id;
                 }
-            }
-            
+            }  
             return _index;
         }
 
@@ -101,7 +100,6 @@ namespace Shopping
                     _index = cartIem.Article.Id;
                 }
             }
-
             return _index;
         }
         #endregion public methods
