@@ -36,18 +36,18 @@
                 if (value.Contains('!') || value.Contains('*') || value.Contains('+') || value.Contains('/'))
                 {
                     throw new SpecialCharInDescriptionException();
-                }else if (!value.Contains(' '))
+                }
+
+                if (!value.Contains(' '))
                 {
                     throw new TooShortDescriptionException();
                 }
-                else if (value.Length > 50)
+
+                if (value.Length > 50)
                 {
                     throw new TooLongDescriptionException();
                 }
-                else
-                {
                     _description = value;
-                }
             }
         }
 
