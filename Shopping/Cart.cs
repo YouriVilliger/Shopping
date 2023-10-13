@@ -1,4 +1,7 @@
-﻿namespace Shopping
+﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
+
+namespace Shopping
 {
     public class Cart
     {
@@ -56,14 +59,50 @@
             }
         }
 
-        public bool DoesExist(int temp)
+        public bool DoesExist(int articleId)
         {
-            throw new NotImplementedException();
+            foreach (CartItem cartIem in _articleItems)
+            {
+                if (cartIem.Article.Id == articleId)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public int Cheapest()
         {
-            throw new NotImplementedException();
+            int _index = 0;
+            float _minPrice = _articleItems[0].Article.Price;
+            
+            foreach (CartItem cartIem in _articleItems)
+            {
+                if (cartIem.Article.Price <= _minPrice)
+                {
+                    _minPrice = cartIem.Article.Price;
+                    _index = cartIem.Article.Id;
+                }
+            }
+            
+            return _index;
+        }
+
+        public int MostExpensive()
+        {
+            int _index = 0;
+            float _maxPrice = _articleItems[0].Article.Price;
+
+            foreach (CartItem cartIem in _articleItems)
+            {
+                if (cartIem.Article.Price >= _maxPrice)
+                {
+                    _maxPrice = cartIem.Article.Price;
+                    _index = cartIem.Article.Id;
+                }
+            }
+
+            return _index;
         }
         #endregion public methods
         public class CartException : Exception { }

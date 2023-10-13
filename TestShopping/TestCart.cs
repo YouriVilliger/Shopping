@@ -147,7 +147,7 @@ namespace TestShopping
 
 
             //then
-            Assert.IsTrue(_cart.DoesExist(999));
+            Assert.IsFalse(_cart.DoesExist(999));
         }
 
         [Test]
@@ -185,7 +185,7 @@ namespace TestShopping
 
 
             //then
-            Assert.AreEqual(10, _cart.Cheapest());
+            Assert.AreEqual(10, _cart.MostExpensive());
         }
     }
 }
