@@ -11,6 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingApp", "ShoppingApp\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9DE4602A-472B-45F5-AD86-E9646E9D8D9C}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		Docs\Shopping_ClassDiagram.PNG = Docs\Shopping_ClassDiagram.PNG
 	EndProjectSection
 EndProject

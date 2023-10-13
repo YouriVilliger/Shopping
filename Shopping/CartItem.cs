@@ -16,7 +16,7 @@ namespace Shopping
             _quantity = quantity;
         }
 
-        public Article Article
+        public Article? Article
         {
             get
             {
@@ -36,10 +36,7 @@ namespace Shopping
                 {
                   throw new  WrongQuantityException();
                 }
-                else
-                {
                     _quantity = value;
-                }
             }
         }
         #endregion public methods

@@ -53,9 +53,9 @@ namespace Shopping
             get
             {
                 float _result = 0.00f;
-                foreach (CartItem item in _articleItems)
+                foreach (CartItem cartIem in _articleItems)
                 {
-                    _result += item.Article.Price * item.Quantity;
+                    _result += cartIem.Article.Price * cartIem.Quantity;
                 }
                 return _result;
             }
