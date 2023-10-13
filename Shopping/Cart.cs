@@ -1,9 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
-
-namespace Shopping
+﻿namespace Shopping
 {
     public class Cart
     {

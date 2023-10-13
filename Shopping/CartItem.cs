@@ -1,6 +1,4 @@
-﻿using System.Net.Http.Headers;
-
-namespace Shopping
+﻿namespace Shopping
 {
     public class CartItem
     {
