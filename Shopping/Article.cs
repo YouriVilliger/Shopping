@@ -33,21 +33,25 @@
             }
             set
             {
-                if (value.Contains('!') || value.Contains('*') || value.Contains('+') || value.Contains('/'))
+                string[] specialChars = {"!", "*", "+", "/"};
+
+                foreach (string specialChar in specialChars)
                 {
-                    throw new SpecialCharInDescriptionException();
+                    if (value.Contains(specialChar))
+                    {
+                        throw new SpecialCharInDescriptionException();
+                    }
                 }
 
                 if (!value.Contains(' '))
                 {
                     throw new TooShortDescriptionException();
                 }
-
                 if (value.Length > 50)
                 {
                     throw new TooLongDescriptionException();
                 }
-                    _description = value;
+                _description = value;
             }
         }
 
