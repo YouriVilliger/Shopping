@@ -15,7 +15,7 @@ namespace Shopping
             throw new NotImplementedException();
         }
 
-        public void Remove(List<CartItem> cartItemsToRemove)
+        public void Remove(List<CartItem> cartItemsToRemove = null)
         {
             throw new NotImplementedException();
         }
@@ -35,6 +35,12 @@ namespace Shopping
                 throw new NotImplementedException();
             }
         }
+
+        public bool DoesExist(int articleId)
+        {
+            throw new NotImplementedException();
+        }
         #endregion public methods
+        public class CartException : Exception { }
     }
 }

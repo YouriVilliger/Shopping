@@ -111,5 +111,45 @@ namespace TestShopping
             //then
             Assert.That(_cart.Price, Is.EqualTo(expectedPrice));
         }
+
+        [Test]
+        public void DoesExist_ById_True()
+        {
+            //given
+            List<Article> articles = ArticleGenerator.Generate(10);
+            List<CartItem> cartItems = new List<CartItem>();
+            foreach (Article article in articles)
+            {
+                cartItems.Add(new CartItem(article, 1));
+            }
+            _cart.Add(cartItems);
+
+            //when
+            
+
+            //then
+            Assert.IsTrue(_cart.DoesExist(10));
+        }
+
+        [Test]
+        public void DoesExist_ById_False()
+        {
+            //given
+            List<Article> articles = ArticleGenerator.Generate(10);
+            List<CartItem> cartItems = new List<CartItem>();
+            foreach (Article article in articles)
+            {
+                cartItems.Add(new CartItem(article, 1));
+            }
+            _cart.Add(cartItems);
+
+            //when
+
+
+            //then
+            Assert.IsTrue(_cart.DoesExist(999));
+        }
+
+
     }
 }
