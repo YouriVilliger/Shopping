@@ -30,7 +30,7 @@
             throw new NotImplementedException();
         }
 
-        public void Remove(List<CartItem> cartItemsToRemove)
+        public void Remove(List<CartItem> cartItemsToRemove = null)
         {
             throw new NotImplementedException();
         }
@@ -55,6 +55,12 @@
                 return _result;
             }
         }
+
+        public int Cheapest()
+        {
+            throw new NotImplementedException();
+        }
         #endregion public methods
+        public class CartException : Exception { }
     }
 }
