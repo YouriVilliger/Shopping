@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
-
-namespace Shopping
+﻿namespace Shopping
 {
     public class Cart
     {
@@ -61,9 +58,9 @@ namespace Shopping
 
         public bool DoesExist(int articleId)
         {
-            foreach (CartItem cartIem in _articleItems)
+            foreach (CartItem cartItem in _articleItems)
             {
-                if (cartIem.Article.Id == articleId)
+                if (cartItem.Article.Id == articleId)
                 {
                     return true;
                 }
@@ -76,12 +73,12 @@ namespace Shopping
             int _index = 0;
             float _minPrice = _articleItems[0].Article.Price;
             
-            foreach (CartItem cartIem in _articleItems)
+            foreach (CartItem cartItem in _articleItems)
             {
-                if (cartIem.Article.Price <= _minPrice)
+                if (cartItem.Article.Price <= _minPrice)
                 {
-                    _minPrice = cartIem.Article.Price;
-                    _index = cartIem.Article.Id;
+                    _minPrice = cartItem.Article.Price;
+                    _index = cartItem.Article.Id;
                 }
             }  
             return _index;
@@ -92,12 +89,12 @@ namespace Shopping
             int _index = 0;
             float _maxPrice = _articleItems[0].Article.Price;
 
-            foreach (CartItem cartIem in _articleItems)
+            foreach (CartItem cartItem in _articleItems)
             {
-                if (cartIem.Article.Price >= _maxPrice)
+                if (cartItem.Article.Price >= _maxPrice)
                 {
-                    _maxPrice = cartIem.Article.Price;
-                    _index = cartIem.Article.Id;
+                    _maxPrice = cartItem.Article.Price;
+                    _index = cartItem.Article.Id;
                 }
             }
             return _index;
