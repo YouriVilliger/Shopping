@@ -43,17 +43,19 @@
             }
         }
 
-        public float Price
+        public float Price(Boolean empty = false)
         {
-            get
+            float _result = 0.00f;
+            if (empty)
             {
-                float _result = 0.00f;
-                foreach (CartItem cartItem in _articleItems)
-                {
-                    _result += cartItem.Article.Price * cartItem.Quantity;
-                }
+                _result = _articleItems.Count + 1;
                 return _result;
             }
+            foreach (CartItem cartItem in _articleItems)
+            {
+                _result += cartItem.Article.Price * cartItem.Quantity;
+            }
+            return _result;
         }
 
         public bool DoesExist(int articleId)

@@ -30,8 +30,8 @@ namespace TestShopping
             //Event will be triggered by constructor
 
             //then
-            Assert.AreEqual(_price, _cartItem.Article.Price);
-            Assert.AreEqual(_quantity, _cartItem.Quantity);
+            Assert.That(_cartItem.Article.Price, Is.EqualTo(_price));
+            Assert.That(_cartItem.Quantity, Is.EqualTo(_quantity));
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace TestShopping
             _cartItem.Quantity = expectedQuantity;
 
             //then
-            Assert.AreEqual(_cartItem.Quantity, expectedQuantity);
+            Assert.That(expectedQuantity, Is.EqualTo(_cartItem.Quantity));
         }
 
         [Test]
