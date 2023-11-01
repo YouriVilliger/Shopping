@@ -48,9 +48,9 @@
             get
             {
                 float _result = 0.00f;
-                foreach (CartItem cartIem in _articleItems)
+                foreach (CartItem cartItem in _articleItems)
                 {
-                    _result += cartIem.Article.Price * cartIem.Quantity;
+                    _result += cartItem.Article.Price * cartItem.Quantity;
                 }
                 return _result;
             }
